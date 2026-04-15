@@ -1,4 +1,5 @@
 IBM watsonx.ai SDK - ibm_watsonx_ai Deployments Module Documentation
+[Check for Updates here](https://ibm.github.io/watsonx-ai-python-sdk/v1.5.4/core_api.html#deployments)
 ----- ----- ----- ----- -----
 
 class client.deployments(client)
@@ -674,26 +675,26 @@ class metanames.DeploymentMetaNames
 
     Available MetaNames:
 
-    | MetaName | Type | Required | Schema | Example value |
-    |----------|------|----------|--------|---------------|
-    | TAGS | list | N | `['string']` | `['string1', 'string2']` |
-    | NAME | str | N | `my_deployment` | |
-    | DESCRIPTION | str | N | `my_deployment` | |
-    | CUSTOM | dict | N | `{}` | |
-    | ASSET | dict | N | `{'id': '4cedab6d-e8e4-4214-b81a-2ddb122db2ab', 'rev': '1'}` | |
-    | PROMPT_TEMPLATE | dict | N | `{'id': '4cedab6d-e8e4-4214-b81a-2ddb122db2ab'}` | |
-    | HARDWARE_SPEC | dict | N | `{'id': '3342-1ce536-20dc-4444-aac7-7284cf3befc'}` | |
-    | HARDWARE_REQUEST | dict | N | `{'size': 'gpu_s', 'num_nodes': 1}` | |
-    | HYBRID_PIPELINE_HARDWARE_SPECS | list | N | `[{'node_runtime_id': 'auto_ai.kb', 'hardware_spec': {'id': '3342-1ce536-20dc-4444-aac7-7284cf3befc', 'num_nodes': '2'}}]` | |
-    | ONLINE | dict | N | `{}` | |
-    | BATCH | dict | N | `{}` | |
-    | DETACHED | dict | N | `{}` | |
-    | R_SHINY | dict | N | `{'authentication': 'anyone_with_url'}` | |
-    | VIRTUAL | dict | N | `{}` | |
-    | OWNER | str | N | `<owner_id>` | |
-    | BASE_MODEL_ID | str | N | `google/flan-ul2` | |
-    | BASE_DEPLOYMENT_ID | str | N | `76a60161-facb-4968-a475-a6f1447c44bf` | |
-    | PROMPT_VARIABLES | dict | N | `{'key': 'value'}` | |
+    | MetaName                       | Type | Required | Schema                                                                                                                     | Example value            |
+    | ------------------------------ | ---- | -------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
+    | TAGS                           | list | N        | `['string']`                                                                                                               | `['string1', 'string2']` |
+    | NAME                           | str  | N        | `my_deployment`                                                                                                            |                          |
+    | DESCRIPTION                    | str  | N        | `my_deployment`                                                                                                            |                          |
+    | CUSTOM                         | dict | N        | `{}`                                                                                                                       |                          |
+    | ASSET                          | dict | N        | `{'id': '4cedab6d-e8e4-4214-b81a-2ddb122db2ab', 'rev': '1'}`                                                               |                          |
+    | PROMPT_TEMPLATE                | dict | N        | `{'id': '4cedab6d-e8e4-4214-b81a-2ddb122db2ab'}`                                                                           |                          |
+    | HARDWARE_SPEC                  | dict | N        | `{'id': '3342-1ce536-20dc-4444-aac7-7284cf3befc'}`                                                                         |                          |
+    | HARDWARE_REQUEST               | dict | N        | `{'size': 'gpu_s', 'num_nodes': 1}`                                                                                        |                          |
+    | HYBRID_PIPELINE_HARDWARE_SPECS | list | N        | `[{'node_runtime_id': 'auto_ai.kb', 'hardware_spec': {'id': '3342-1ce536-20dc-4444-aac7-7284cf3befc', 'num_nodes': '2'}}]` |                          |
+    | ONLINE                         | dict | N        | `{}`                                                                                                                       |                          |
+    | BATCH                          | dict | N        | `{}`                                                                                                                       |                          |
+    | DETACHED                       | dict | N        | `{}`                                                                                                                       |                          |
+    | R_SHINY                        | dict | N        | `{'authentication': 'anyone_with_url'}`                                                                                    |                          |
+    | VIRTUAL                        | dict | N        | `{}`                                                                                                                       |                          |
+    | OWNER                          | str  | N        | `<owner_id>`                                                                                                               |                          |
+    | BASE_MODEL_ID                  | str  | N        | `google/flan-ul2`                                                                                                          |                          |
+    | BASE_DEPLOYMENT_ID             | str  | N        | `76a60161-facb-4968-a475-a6f1447c44bf`                                                                                     |                          |
+    | PROMPT_VARIABLES               | dict | N        | `{'key': 'value'}`                                                                                                         |                          |
 
 ---
 
@@ -702,15 +703,15 @@ class metanames.ScoringMetaNames
 
     Available MetaNames:
 
-    | MetaName | Type | Required | Schema | Example value |
-    |----------|------|----------|--------|---------------|
-    | NAME | str | N | `jobs test` | |
-    | INPUT_DATA | list | N | `[{'name(optional)': 'string', 'id(optional)': 'string', 'fields(optional)': 'array[string]', 'values': 'array[array[string]]'}]` | `[{'fields': ['name', 'age', 'occupation'], 'values': [['john', 23, 'student']]}]` |
-    | INPUT_DATA_REFERENCES | list | N | `[{'id(optional)': 'string', 'type(required)': 'string', 'connection(required)': {'href(required)': 'string'}, 'location(required)': {'bucket': 'string', 'path': 'string'}, 'schema(optional)': {'id(required)': 'string', 'fields(required)': [{'name(required)': 'string', 'type(required)': 'string', 'nullable(optional)': 'string'}]}}]` | |
-    | OUTPUT_DATA_REFERENCE | dict | N | `{'type(required)': 'string', 'connection(required)': {'href(required)': 'string'}, 'location(required)': {'bucket': 'string', 'path': 'string'}, 'schema(optional)': {'id(required)': 'string', 'fields(required)': [{'name(required)': 'string', 'type(required)': 'string', 'nullable(optional)': 'string'}]}}` | |
-    | EVALUATIONS_SPEC | list | N | `[{'id(optional)': 'string', 'input_target(optional)': 'string', 'metrics_names(optional)': 'array[string]'}]` | `[{'id': 'string', 'input_target': 'string', 'metrics_names': ['auroc', 'accuracy']}]` |
-    | ENVIRONMENT_VARIABLES | dict | N | `{'my_env_var1': 'env_var_value1', 'my_env_var2': 'env_var_value2'}` | |
-    | SCORING_PARAMETERS | dict | N | `{'forecast_window': 50}` | |
+    | MetaName              | Type | Required | Schema                                                                                                                                                                                                                                                                                                                                         | Example value                                                                          |
+    | --------------------- | ---- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+    | NAME                  | str  | N        | `jobs test`                                                                                                                                                                                                                                                                                                                                    |                                                                                        |
+    | INPUT_DATA            | list | N        | `[{'name(optional)': 'string', 'id(optional)': 'string', 'fields(optional)': 'array[string]', 'values': 'array[array[string]]'}]`                                                                                                                                                                                                              | `[{'fields': ['name', 'age', 'occupation'], 'values': [['john', 23, 'student']]}]`     |
+    | INPUT_DATA_REFERENCES | list | N        | `[{'id(optional)': 'string', 'type(required)': 'string', 'connection(required)': {'href(required)': 'string'}, 'location(required)': {'bucket': 'string', 'path': 'string'}, 'schema(optional)': {'id(required)': 'string', 'fields(required)': [{'name(required)': 'string', 'type(required)': 'string', 'nullable(optional)': 'string'}]}}]` |                                                                                        |
+    | OUTPUT_DATA_REFERENCE | dict | N        | `{'type(required)': 'string', 'connection(required)': {'href(required)': 'string'}, 'location(required)': {'bucket': 'string', 'path': 'string'}, 'schema(optional)': {'id(required)': 'string', 'fields(required)': [{'name(required)': 'string', 'type(required)': 'string', 'nullable(optional)': 'string'}]}}`                             |                                                                                        |
+    | EVALUATIONS_SPEC      | list | N        | `[{'id(optional)': 'string', 'input_target(optional)': 'string', 'metrics_names(optional)': 'array[string]'}]`                                                                                                                                                                                                                                 | `[{'id': 'string', 'input_target': 'string', 'metrics_names': ['auroc', 'accuracy']}]` |
+    | ENVIRONMENT_VARIABLES | dict | N        | `{'my_env_var1': 'env_var_value1', 'my_env_var2': 'env_var_value2'}`                                                                                                                                                                                                                                                                           |                                                                                        |
+    | SCORING_PARAMETERS    | dict | N        | `{'forecast_window': 50}`                                                                                                                                                                                                                                                                                                                      |                                                                                        |
 
 ----- ----- ----- ----- -----
 

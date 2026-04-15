@@ -1,4 +1,5 @@
 Writing deployable Python functions
+[Check for Updates here](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-deploy-py-function-write.html?context=wx&audience=wdp)
 
 Learn how to write a Python function and then store it as an asset that you can use to deploy models.
 

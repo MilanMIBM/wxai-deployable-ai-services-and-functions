@@ -1,4 +1,5 @@
 Coding and deploying AI services manually
+[Check for Updates here](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ai-services-manual-coding.html?context=wx&audience=wdp)
 
 The manual coding approach for deploying AI services involves writing custom code to deploy and manage AI services. This approach provides full control over the deployment process and allows for customization to meet specific requirements.
 

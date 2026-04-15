@@ -1,4 +1,5 @@
 Creating watsonx.ai batch deployments
+[Check for Updates here](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/deploy-batch-details.html?context=wx&audience=wdp)
 
 Create a batch deployment to process input data from a file, data connection, or connected data in a storage bucket, and write the output to a selected destination.
 

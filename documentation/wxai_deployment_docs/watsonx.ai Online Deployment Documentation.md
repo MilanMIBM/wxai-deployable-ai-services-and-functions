@@ -1,4 +1,5 @@
 Creating online deployments
+[Check for Updates here](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/deploy-online.html?context=wx&audience=wdp)
 
 Create an online deployment for machine learning models, generative AI assets, or Python functions to generate predictions or results in real time. For example, create an online deployment for a classification model that is trained to predict whether a bank customer enrolls in a promotion. Submitting new customer data to the deployment endpoint returns a prediction in real time.
 

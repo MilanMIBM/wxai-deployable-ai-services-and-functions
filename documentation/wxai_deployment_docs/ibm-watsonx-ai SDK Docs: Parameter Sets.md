@@ -1,4 +1,5 @@
 IBM watsonx.ai SDK - ibm_watsonx_ai Parameter Sets Module Documentation
+[Check for Updates here](https://ibm.github.io/watsonx-ai-python-sdk/v1.5.4/core_api.html#parameter-sets)
 ----- ----- ----- ----- -----
 
 class client.ParameterSets(client)
@@ -183,12 +184,12 @@ class metanames.ParameterSetsMetaNames
 
     Available MetaNames:
 
-    | MetaName | Type | Required | Example value |
-    |----------|------|----------|---------------|
-    | NAME | str | Y | `sample name` |
-    | DESCRIPTION | str | N | `sample description` |
-    | PARAMETERS | list | Y | `[{'name': 'string', 'description': 'string', 'prompt': 'string', 'type': 'string', 'subtype': 'string', 'value': 'string', 'valid_values': ['string']}]` |
-    | VALUE_SETS | list | N | `[{'name': 'string', 'values': [{'name': 'string', 'value': 'string'}]}]` |
+    | MetaName    | Type | Required | Example value                                                                                                                                             |
+    | ----------- | ---- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | NAME        | str  | Y        | `sample name`                                                                                                                                             |
+    | DESCRIPTION | str  | N        | `sample description`                                                                                                                                      |
+    | PARAMETERS  | list | Y        | `[{'name': 'string', 'description': 'string', 'prompt': 'string', 'type': 'string', 'subtype': 'string', 'value': 'string', 'valid_values': ['string']}]` |
+    | VALUE_SETS  | list | N        | `[{'name': 'string', 'values': [{'name': 'string', 'value': 'string'}]}]`                                                                                 |
 
 ----- ----- ----- ----- -----
 

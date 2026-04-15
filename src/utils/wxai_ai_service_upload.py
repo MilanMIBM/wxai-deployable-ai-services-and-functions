@@ -52,14 +52,15 @@ def _detect_documentation_functions(file_path):
     def _has_return_or_yield(func_node):
         for node in ast.walk(func_node):
             if isinstance(node, (ast.Return, ast.Yield, ast.YieldFrom)):
-                # Exclude bare `return` with no value (same as return None — still valid)
+                # Exclude bare `return` with no value (same as return None - still valid)
                 return True
         return False
 
     def _only_raises(func_node):
         """True if the function body consists of nothing but a raise (and optional docstring)."""
         stmts = [
-            s for s in func_node.body
+            s
+            for s in func_node.body
             if not (isinstance(s, ast.Expr) and isinstance(s.value, ast.Constant))
         ]
         return len(stmts) == 1 and isinstance(stmts[0], ast.Raise)
@@ -74,7 +75,10 @@ def _detect_documentation_functions(file_path):
             else:
                 found[node.name] = _has_return_or_yield(node)
 
-    result = {name: found.get(name, False) for name in ("generate", "generate_stream", "generate_batch")}
+    result = {
+        name: found.get(name, False)
+        for name in ("generate", "generate_stream", "generate_batch")
+    }
     print(f"Detected DOCUMENTATION_FUNCTIONS: {result}")
     return result
 
@@ -123,7 +127,9 @@ def upload_watsonxai_ai_service(
     """
     # --- Resolve software spec ---
     if software_spec_id is None:
-        base_spec_id = GENAI_SOFTWARE_SPEC_ID if use_genai_spec else RUNTIME_SOFTWARE_SPEC_ID
+        base_spec_id = (
+            GENAI_SOFTWARE_SPEC_ID if use_genai_spec else RUNTIME_SOFTWARE_SPEC_ID
+        )
     else:
         base_spec_id = software_spec_id
 
@@ -215,7 +221,7 @@ def upload_watsonxai_ai_service(
 
         # Upload package extension
         pe_suffix = f"_pkg_{spec_suffix}"
-        pe_base = ai_service_name[:36 - len(pe_suffix)]
+        pe_base = ai_service_name[: 36 - len(pe_suffix)]
         pe_metadata = {
             client.package_extensions.ConfigurationMetaNames.NAME: f"{pe_base}{pe_suffix}",
             client.package_extensions.ConfigurationMetaNames.TYPE: "requirements_txt",
@@ -231,7 +237,7 @@ def upload_watsonxai_ai_service(
 
         # Create custom software spec with the package extension
         ss_suffix = f"_sw_sp_{spec_suffix}"
-        ss_base = ai_service_name[:36 - len(ss_suffix)]
+        ss_base = ai_service_name[: 36 - len(ss_suffix)]
         ss_metadata = {
             client.software_specifications.ConfigurationMetaNames.NAME: f"{ss_base}{ss_suffix}",
             client.software_specifications.ConfigurationMetaNames.BASE_SOFTWARE_SPECIFICATION: {
@@ -264,7 +270,9 @@ def upload_watsonxai_ai_service(
         )
 
     doc_functions = _detect_documentation_functions(ai_service_file_path)
-    ai_service_meta[client.repository.AIServiceMetaNames.DOCUMENTATION_FUNCTIONS] = doc_functions
+    ai_service_meta[client.repository.AIServiceMetaNames.DOCUMENTATION_FUNCTIONS] = (
+        doc_functions
+    )
 
     # --- Gzip the AI service file and upload ---
     original_dir = os.getcwd()
@@ -279,10 +287,10 @@ def upload_watsonxai_ai_service(
 
         os.chdir(tmp_dir)
         print(f"Uploading AI service '{ai_service_name}' from: {gz_path}")
-        ai_service_details = client.repository.store_ai_service(gz_path, ai_service_meta)
-        print(
-            f"Upload successful - id: {ai_service_details.get('metadata').get('id')}"
+        ai_service_details = client.repository.store_ai_service(
+            gz_path, ai_service_meta
         )
+        print(f"Upload successful - id: {ai_service_details.get('metadata').get('id')}")
         return ai_service_details
     finally:
         os.chdir(original_dir)

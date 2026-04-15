@@ -15,7 +15,7 @@ def load_all_dotenv(path=".", verbose=True):
 
     if path_obj.is_file():
         # Load single file
-        load_dotenv(path_obj)
+        load_dotenv(path_obj, override=True)
         if verbose:
             print(f"✓ Loaded: {path_obj}")
     elif path_obj.is_dir():
@@ -25,7 +25,7 @@ def load_all_dotenv(path=".", verbose=True):
             if verbose:
                 print(f"⚠ No .env files found in: {path_obj}")
         for env_file in env_files:
-            load_dotenv(env_file)
+            load_dotenv(env_file, override=True)
             if verbose:
                 print(f"✓ Loaded: {env_file}")
     else:

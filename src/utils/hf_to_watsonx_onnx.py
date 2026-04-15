@@ -77,13 +77,13 @@ def download_and_convert_to_onnx(
     Returns
     -------
     dict with keys:
-        "onnx_path"      – path to the exported .onnx file
-        "tar_gz_path"    – path to the .tar.gz archive ready for watsonx.ai upload
-        "model_type"     – suggested watsonx.ai model type string
-        "sw_spec"        – software specification dict (name + id)
-        "hw_spec"        – hardware specification dict (name + id)
-        "input_schema"   – watsonx.ai-compatible input schema
-        "output_schema"  – watsonx.ai-compatible output schema
+        "onnx_path"      - path to the exported .onnx file
+        "tar_gz_path"    - path to the .tar.gz archive ready for watsonx.ai upload
+        "model_type"     - suggested watsonx.ai model type string
+        "sw_spec"        - software specification dict (name + id)
+        "hw_spec"        - hardware specification dict (name + id)
+        "input_schema"   - watsonx.ai-compatible input schema
+        "output_schema"  - watsonx.ai-compatible output schema
     """
 
     # ------------------------------------------------------------------ #
@@ -114,7 +114,7 @@ def download_and_convert_to_onnx(
         export_encoder_only = is_enc_dec
 
     if export_encoder_only and is_enc_dec:
-        print("[3/7] Encoder-decoder detected — exporting encoder only ...")
+        print("[3/7] Encoder-decoder detected - exporting encoder only ...")
         export_model = _extract_encoder(model)
     else:
         print("[3/7] Exporting full model ...")
@@ -191,7 +191,7 @@ def download_and_convert_to_onnx(
     input_schema, output_schema = _build_model_schema(onnx_model)
 
     del onnx_model
-    print(f"       ONNX check passed — saved to {onnx_path}")
+    print(f"       ONNX check passed - saved to {onnx_path}")
 
     # ------------------------------------------------------------------ #
     # 7. Verify with onnxruntime
@@ -201,7 +201,7 @@ def download_and_convert_to_onnx(
         sess = ort.InferenceSession(str(onnx_path))
         ort_inputs = {k: v.numpy() for k, v in dummy_input.items()}
         ort_outputs = sess.run(None, ort_inputs)
-        print(f"       Verification passed — {len(ort_outputs)} output(s) produced.")
+        print(f"       Verification passed - {len(ort_outputs)} output(s) produced.")
         del sess
     else:
         print("[6/7] Skipping verification (verify=False).")
@@ -346,7 +346,7 @@ def _resolve_auto_class(config):
 
 
 def _load_preprocessor(model_id: str):
-    """Try loading a processor, tokenizer, or feature extractor — in that order."""
+    """Try loading a processor, tokenizer, or feature extractor - in that order."""
     for loader in [AutoProcessor, AutoTokenizer, AutoFeatureExtractor]:
         try:
             return loader.from_pretrained(model_id, trust_remote_code=True)

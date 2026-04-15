@@ -96,5 +96,6 @@ plans/
 cos.env.template
 upload_to_env.bash
 main.py
+/src/utils/hf_to_watsonx_onnx.py
 src/utils/hf_to_watsonx_onnx.py
-src/utils/hf_to_watsonx_onnx.py
+.env

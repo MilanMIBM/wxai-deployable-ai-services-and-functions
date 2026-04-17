@@ -2,14 +2,14 @@
 Deploy a previously uploaded function asset on IBM watsonx.ai.
 
 Usage as module:
-    python -m utils.wxai_x_functions_deploy \
+    python -m utils.sw_compatible.wxai_x_functions_deploy \
         --artifact_id <artifact_id> \
         --deployment_name my_deployment \
         --wx_api_key <key> \
         --wx_space_id <space_id>
 
 Usage as module (CPD):
-    python -m utils.wxai_x_functions_deploy \
+    python -m utils.sw_compatible.wxai_x_functions_deploy \
         --artifact_id <artifact_id> \
         --deployment_name my_deployment \
         --wx_api_key <key> \
@@ -19,14 +19,14 @@ Usage as module (CPD):
         --cpd
 
 Usage as callable script:
-    python src/utils/wxai_x_functions_deploy.py \
+    python src/utils/sw_compatible/wxai_x_functions_deploy.py \
         --artifact_id <artifact_id> \
         --deployment_name my_deployment \
         --wx_api_key <key> \
         --wx_space_id <space_id>
 
 Usage as callable script (CPD):
-    python src/utils/wxai_x_functions_deploy.py \
+    python src/utils/sw_compatible/wxai_x_functions_deploy.py \
         --artifact_id <artifact_id> \
         --deployment_name my_deployment \
         --wx_api_key <key> \

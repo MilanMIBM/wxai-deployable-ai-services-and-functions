@@ -2,14 +2,14 @@
 Upload a deployable AI service to IBM watsonx.ai.
 
 Usage as module:
-    python -m utils.wxai_x_ai_service_upload \
+    python -m utils.sw_compatible.wxai_x_ai_service_upload \
         --folder_path ./my_ai_service_folder \
         --ai_service_file service.py \
         --wx_api_key <key> \
         --wx_space_id <space_id>
 
 Usage as module (CPD):
-    python -m utils.wxai_x_ai_service_upload \
+    python -m utils.sw_compatible.wxai_x_ai_service_upload \
         --folder_path ./my_ai_service_folder \
         --ai_service_file service.py \
         --wx_api_key <key> \
@@ -19,14 +19,14 @@ Usage as module (CPD):
         --cpd
 
 Usage as callable script:
-    python src/utils/wxai_x_ai_service_upload.py \
+    python src/utils/sw_compatible/wxai_x_ai_service_upload.py \
         --folder_path ./my_ai_service_folder \
         --ai_service_file service.py \
         --wx_api_key <key> \
         --wx_space_id <space_id>
 
 Usage as callable script (CPD):
-    python src/utils/wxai_x_ai_service_upload.py \
+    python src/utils/sw_compatible/wxai_x_ai_service_upload.py \
         --folder_path ./my_ai_service_folder \
         --ai_service_file service.py \
         --wx_api_key <key> \

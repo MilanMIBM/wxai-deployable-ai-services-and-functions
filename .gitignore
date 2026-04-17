@@ -99,3 +99,5 @@ main.py
 /src/utils/hf_to_watsonx_onnx.py
 src/utils/hf_to_watsonx_onnx.py
 .env
+test_sw_upload.bash
+wx_sw_connect_test.py
